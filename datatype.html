@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Bakery Name</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- bootstrap javascript link -->
+
+    <style>
+        styles.css
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(164, 198, 227);
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Home section styles */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        /* Menu section styles */
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        /* Order section styles */
+        .order-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Contact section styles */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .add-to-cart button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .header {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 20px;
+        }
+
+        .about-story {
+            margin-bottom: 20px;
+        }
+
+        .about-team {
+            margin-bottom: 20px;
+        }
+
+        .about-quality {
+            margin-bottom: 20px;
+        }
+
+        .about-team-member {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .about-team-member-image {
+            max-width: 250px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .about-team-member-info {
+            flex-grow: 1;
+        }
+
+        .about-team-member-name {
+            font-weight: bold;
+        }
+
+        .about-team-member-position {
+            color: #555;
+        }
+
+        .contact-section {
+            padding: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 400px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .special-offers-section {
+            padding: 20px;
+        }
+
+        .special-offers {
+            margin-bottom: 20px;
+        }
+
+        .special-offer {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .blog-section {
+            padding: 20px;
+        }
+
+        .blog-post {
+            margin-bottom: 20px;
+        }
+
+        .social-media-section {
+            padding: 20px;
+        }
+
+        .social-media-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-media-icon {
+            margin-right: 10px;
+        }
+
+        .menu-category {
+            margin-bottom: 30px;
+        }
+
+        .menu-category h2 {
+            color: #ff8c00;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-image {
+            max-width: 200px;
+            margin-right: 20px;
+        }
+
+        .menu-item-info {
+            flex-grow: 1;
+        }
+
+        .menu-item-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-description {
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-price {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .add-to-cart {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .add-to-cart button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menus {
+            padding: 10px 100px;
+        }
+
+        #home {
+            position: absolute;
+            top: 5%;
+            z-index: 1000;
+            justify-content: center;
+            margin: auto;
+            width: 100%;
+            color: white;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .specialties {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .testimonials {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-author {
+            font-style: italic;
+        }
+
+        .navs>li {
+            width: auto;
+        }
+
+        .navs>li:hover {
+            color: red;
+            background-color: red;
+        }
+
+        /* style for nav */
+        /* Navbar */
+        .navbar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-toggle {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .navbar-toggle-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin-bottom: 5px;
+        }
+
+        .navbar-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-item {
+            margin-left: 15px;
+        }
+
+        .navbar-link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .add-cart-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-cart-button:hover {
+            background-color: #555;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                padding: 20px;
+                background-color: #f8f8f8;
+            }
+
+            .navbar-item {
+                margin: 10px 0;
+            }
+
+            .navbar-toggle-icon {
+                margin-bottom: 3px;
+            }
+
+            .navbar-toggle.active .navbar-toggle-icon:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .navbar-toggle.active .navbar-toggle-icon:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar-toggle.active .navbar-toggle-icon:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .navbar-toggle.active+.navbar-menu {
+                display: block;
+            }
+        }
+
+        /* css for checkout */
+        .checkout-section {
+            padding: 20px;
+        }
+
+        .checkout-form {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .checkout-form label {
+            font-weight: bold;
+        }
+
+        .checkout-form input[type="text"],
+        .checkout-form input[type="tel"],
+        .checkout-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .checkout-form select {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .checkout-payment-options {
+            margin-top: 20px;
+        }
+
+        .checkout-payment-options label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .checkout-summary {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .checkout-summary-total {
+            font-weight: bold;
+        }
+
+        .checkout-confirm {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .checkout-confirm button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* order summary */
+        .cart-section {
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-quantity {
+            margin-bottom: 5px;
+        }
+
+        .cart-item-quantity input {
+            width: 40px;
+            padding: 5px;
+        }
+
+        .cart-item-subtotal {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .cart-checkout {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .cart-checkout button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+
+
+<body>
+    <header style="background-color: orange; font-size: larger;">
+        <nav>
+            <div class="logo">Your Bakery Name</div>
+            <ul class="navs">
+                <li><a href="#homes">Home</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="ordersummary.html">Order</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100"
+                    src="https://c.wallhere.com/photos/ae/c3/bakery_bread_photography-1197270.jpg!d"
+                    style="height: 500px;" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"
+                    src="https://tse2.mm.bing.net/th?id=OIP.SS4mq8Ugk09po-SsvMXWuwHaEK&pid=Api&P=0&h=180"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"
+                    src="https://tse2.mm.bing.net/th?id=OIP.SVw354464Y_pLHCcJA3IXgHaEK&pid=Api&P=0&h=180"
+                    alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <h1>Welcome to Your Bakery Name</h1>
+                <p>Delicious treats made with love!</p>
+                <a href="#menu" class="cta">View Menu</a>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- dmsnqnkdnkdklq -->
+
+
+        <div id="homes">
+
+            <div class="header">
+                <h1>Welcome to My Bakery</h1>
+                <p class="welcome-message">Indulge in our delicious baked goods</p>
+                <p class="specialties">Specializing in fresh bread, pastries, and cakes</p>
+            </div>
+
+            <div class="image-gallery">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.GIe205th8xGXRsUEKbEhIwHaD3&pid=Api&P=0&h=180"
+                    alt="Baked Good 1">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.SS4mq8Ugk09po-SsvMXWuwHaEK&pid=Api&P=0&h=180"
+                    alt="Baked Good 2">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.SVw354464Y_pLHCcJA3IXgHaEK&pid=Api&P=0&h=180"
+                    alt="Baked Good 3">
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#menu">Explore Our Menu</a>
+
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"The best bakery in town! Their pastries are always fresh and mouthwatering."</p>
+                <p class="testimonial-author">- John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"I love their cakes! They're beautifully decorated and taste heavenly."</p>
+                <p class="testimonial-author">- Jane Smith</p>
+            </div>
+        </div>
+        <section id="order">
+            <h2>
+                <section id="menu">
+                    <h2>Place Your Order</h2>
+
+                    <div class="header">
+                        <h1>Our Menu</h1>
+                    </div>
+
+                    <div class="menus">
+                        <div class="menu-category">
+                            <h2>Bread</h2>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse2.mm.bing.net/th?id=OIP.YA9P3xEHI_LyemZfKOqMMwHaE7&pid=Api&P=0&h=180"
+                                    alt="Bread">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Fresh Baguette</div>
+                                    <div class="menu-item-description">Delicious French baguette made with
+                                        high-quality ingredients.
+                                    </div>
+                                    <div class="menu-item-price">$4.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse4.mm.bing.net/th?id=OIP.RLuYfIloxRM-yzTDq8pjywHaE7&pid=Api&P=0&h=180"
+                                    alt="Bread">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Whole Wheat Loaf</div>
+                                    <div class="menu-item-description">Delicious Whole Wheat Loaf made with
+                                        high-quality ingredients.
+                                    </div>
+                                    <div class="menu-item-price">$4.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse4.mm.bing.net/th?id=OIP.aqYkl28WAZBa0DS1v8kKTAHaFj&pid=Api&P=0&h=180"
+                                    alt="Bread">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Sourdough Bread</div>
+                                    <div class="menu-item-description">Delicious Sourdough Bread made with
+                                        high-quality ingredients.
+                                    </div>
+                                    <div class="menu-item-price">$4.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Add more bread items here -->
+                        </div>
+
+                        <div class="menu-category">
+                            <h2>Pastries</h2>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse3.explicit.bing.net/th?id=OIP.eApRxNwzhnNDSdkEd8ciKQHaE8&pid=Api&P=0&h=180"
+                                    alt="Pastry">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Croissant</div>
+                                    <div class="menu-item-description">Flaky, buttery croissant perfect for
+                                        breakfast or a snack.</div>
+                                    <div class="menu-item-price">$2.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse3.mm.bing.net/th?id=OIP.SxYDNXxIYQ2tbgdDUu-iigHaE8&pid=Api&P=0&h=180"
+                                    alt="Pastry">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Danish Pastry</div>
+                                    <div class="menu-item-description">Flaky, buttery croissant perfect for
+                                        breakfast or a snack.</div>
+                                    <div class="menu-item-price">$2.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse2.mm.bing.net/th?id=OIP.nWDcyod9VyezncvdSGtm1wHaFA&pid=Api&P=0&h=180"
+                                    alt="Pastry">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Cinnamon Roll</div>
+                                    <div class="menu-item-description">Flaky, buttery croissant perfect for
+                                        breakfast or a snack.</div>
+                                    <div class="menu-item-price">$2.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Add more pastry items here -->
+                        </div>
+
+                        <div class="menu-category">
+                            <h2>Cakes</h2>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse2.mm.bing.net/th?id=OIP.UsTdcdwI9KQNitBaLD8rSgHaFx&pid=Api&P=0&h=180"
+                                    alt="Cake">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Chocolate Cake</div>
+                                    <div class="menu-item-description">Rich and decadent chocolate cake layered with
+                                        smooth chocolate
+                                        ganache.</div>
+                                    <div class="menu-item-price">$24.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse4.mm.bing.net/th?id=OIP.bBQqIdp1NnImNRIzGixOOAHaFj&pid=Api&P=0&h=180"
+                                    alt="Cake">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Vanilla Cake</div>
+                                    <div class="menu-item-description">Rich and decadent chocolate cake layered with
+                                        smooth chocolate
+                                        ganache.</div>
+                                    <div class="menu-item-price">$24.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <img class="menu-item-image"
+                                    src="https://tse2.mm.bing.net/th?id=OIP.ErZ-IBjnU3Q4A8LaP3pHhQHaFj&pid=Api&P=0&h=180"
+                                    alt="Cake">
+                                <div class="menu-item-info">
+                                    <div class="menu-item-name">Red Velvet Cake</div>
+                                    <div class="menu-item-description">Rich and decadent chocolate cake layered with
+                                        smooth chocolate
+                                        ganache.</div>
+                                    <div class="menu-item-price">$24.99</div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <!-- Add more cake items here -->
+                        </div>
+                    </div>
+
+                </section>
+            </h2>
+            <div class="order-form">
+                <!-- Order form goes here -->
+            </div>
+        </section>
+        <section id="menu">
+            <div class="header">
+                <h1>Special Offers</h1>
+            </div>
+
+            <div class="special-offers-section">
+                <div class="special-offers">
+                    <div class="special-offer">
+                        <h2>Seasonal Discounts</h2>
+                        <p>Get 20% off on all holiday-themed pastries and cakes. Limited time offer!</p>
+                    </div>
+
+                    <div class="special-offer">
+                        <h2>Loyalty Program</h2>
+                        <p>Join our loyalty program and earn points with every purchase. Redeem points for discounts and
+                            freebies!</p>
+                    </div>
+
+                    <!-- Add more special offers here -->
+                </div>
+            </div>
+
+            <div class="header">
+                <h1>Blog</h1>
+            </div>
+
+            <div class="blog-section">
+                <div class="blog-post">
+                    <h2>Recipe: Chocolate Chip Cookies</h2>
+                    <p>Learn how to make the perfect chocolate chip cookies with our tried and tested recipe.</p>
+                    <a href="blog/chocolate-chip-cookies.html">Read more</a>
+                </div>
+
+                <div class="blog-post">
+                    <h2>Baking Tips: Getting the Perfect Rise</h2>
+                    <p>Discover the secrets to getting your baked goods to rise beautifully every time.</p>
+                    <a href="blog/perfect-rise.html">Read more</a>
+                </div>
+
+                <!-- Add more blog posts here -->
+            </div>
+
+
+        </section>
+
+
+
+
+        <section id="aboutus">
+            <div class="header">
+                <h1>About Us</h1>
+            </div>
+
+            <div class="about-section">
+                <div class="about-story">
+                    <h2>Our Bakery Story</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nulla nec nulla porta convallis
+                        at quis
+                        risus. Fusce vitae purus luctus, faucibus orci vel, placerat est. Morbi elementum est id est
+                        lobortis,
+                        vel consectetur lacus varius. Aliquam nec vulputate magna, id consequat tortor. Donec ut quam
+                        vel turpis
+                        ullamcorper vulputate ut nec dolor. Etiam sit amet arcu eu nunc aliquet feugiat.</p>
+                    <p>Curabitur at tortor quis nibh auctor finibus. Sed lacinia tortor vel nulla lacinia cursus. Fusce
+                        congue
+                        vestibulum quam, ut faucibus tellus. Nulla faucibus leo nec sem hendrerit, eget bibendum velit
+                        pulvinar.
+                        Sed vitae gravida est. In fringilla fermentum neque vel ullamcorper. Integer mattis nisl lacus,
+                        at
+                        sagittis ipsum tincidunt sit amet. Nulla sed lorem enim.</p>
+                </div>
+
+                <div class="about-team">
+                    <h2>Our Team</h2>
+                    <div class="about-team-member">
+                        <img class="about-team-member-image"
+                            src="https://tse4.mm.bing.net/th?id=OIP.lLIB8xK35nQerwT0rbNWtgHaE8&pid=Api&P=0&h=180"
+                            alt="Team Member 1">
+                        <div class="about-team-member-info">
+                            <div class="about-team-member-name">John Doe</div>
+                            <div class="about-team-member-position">Baker</div>
+                        </div>
+                    </div>
+
+                    <!-- Add more team members here -->
+                </div>
+
+                <div class="about-quality">
+                    <h2>Quality Commitment</h2>
+                    <p>We are committed to providing the highest quality baked goods. Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipiscing elit. Nunc ac nulla nec nulla porta convallis at quis risus. Fusce vitae purus
+                        luctus,
+                        faucibus orci vel, placerat est. Morbi elementum est id est lobortis, vel consectetur lacus
+                        varius.
+                        Aliquam nec vulputate magna, id consequat tortor.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+
+            <div class="header">
+                <h2>Contact Us</h2>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Address: 123 Bakery Street, City, Country</p>
+                    <p>Phone: +1 234 567890</p>
+                    <p>Email: info@mybakery.com</p>
+
+                    <!-- Add Google Maps embedded code here -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5657563325274!2d-74.00594178520263!3d40.712783937716006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDQ5JzExLjMiTiA3NMKwMTUnNTAuMSJX!5e0!3m2!1sen!2sus!4v1621641095795!5m2!1sen!2sus"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="contact-form m-auto">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <div>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div>
+                            <label for="message">Message:</label>
+                            <textarea id="message" placeholder="Enter your message" required></textarea>
+                        </div>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="header">
+                <h1>Social Media Integration</h1>
+            </div>
+
+            <div class="social-media-section">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/yourbakery" target="_blank" class="social-media-icon"><img
+                            style="height: 40px; width: 40px;"
+                            src="https://tse2.mm.bing.net/th?id=OIP.bD6otkD2EDUCHCDdXc03-gHaGK&pid=Api&P=0&h=180"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/yourbakery" target="_blank" class="social-media-icon"><img
+                            style="height: 40px; width: 40px;margin-left: 20px;margin-right: 20px;"
+                            src="https://tse1.mm.bing.net/th?id=OIP.c13aaIgKOFzozFvk88X81gHaHZ&pid=Api&P=0&h=180"
+                            alt="Instagram"></a>
+                    <a href="https://www.twitter.com/yourbakery" target="_blank" class="social-media-icon"><img
+                            style="height: 40px; width: 40px;"
+                            src="https://tse2.mm.bing.net/th?id=OIP.P3GJZi8Z-DGPx1JS3u5yOgHaGl&pid=Api&P=0&h=180"
+                            alt="Twitter"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="header">
+        <h1>Shopping Cart</h1>
+    </div>
+
+    <div class="cart-section">
+        <div class="cart-item">
+            <img class="cart-item-image"
+                src="https://tse2.mm.bing.net/th?id=OIP.ErZ-IBjnU3Q4A8LaP3pHhQHaFj&pid=Api&P=0&h=180 alt=" Bread">
+            <div class="cart-item-info">
+                <div class="cart-item-name">Fresh Baguette</div>
+                <div class="cart-item-price">$4.99</div>
+                <div class="cart-item-quantity">
+                    Quantity: <input type="number" value="1" min="1">
+                </div>
+                <div class="cart-item-subtotal">Subtotal: $4.99</div>
+            </div>
+            <div class="cart-item-remove">
+                <button>Remove</button>
+            </div>
+        </div>
+
+        <!-- Add more cart items here -->
+
+        <div class="cart-total">
+            Total: $29.97
+        </div>
+
+        <div class="cart-checkout">
+            <button><a href="checkout.html" style="text-decoration: none;">Checkout</a></button>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Checkout</h1>
+    </div>
+
+
+    <div class="checkout-section">
+        <form class="checkout-form">
+            <div>
+                <label for="delivery-option">Delivery Option:</label>
+                <select id="delivery-option">
+                    <option value="delivery">Delivery</option>
+                    <option value="pickup">Pickup</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Enter your address" required>
+            </div>
+
+            <div>
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" placeholder="Enter your contact number" required>
+            </div>
+
+            <div>
+                <label for="delivery-time">Preferred Delivery Time:</label>
+                <input type="text" id="delivery-time" placeholder="Enter preferred delivery time">
+            </div>
+
+            <div>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash-on-delivery">Cash on Delivery</option>
+                </select>
+            </div>
+
+            <!-- Add more fields for payment details if needed -->
+
+        </form>
+
+        <div class="checkout-payment-options">
+            <label>Payment Options:</label>
+            <!-- Add payment options here -->
+        </div>
+
+        <div class="checkout-summary">
+            <div class="checkout-summary-total">
+                Total: $29.97
+            </div>
+        </div>
+
+        <div class="checkout-confirm">
+            <button>Confirm Order</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Bakery Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
